@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('library.jpg');
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+
+.logo {
+    background-color: rgba(247, 248, 248, 0.589);
+    width: 400px;
+    height: 95px;
+    margin-bottom: 20px;
+}
+
+.Welcome h1{
+    background-color: rgba(35, 39, 39, 0.342);
+    font-size: 3em;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    margin-left: 400px;
+}
+
+.button {
+    background-color: #141087;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 230px 50px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    justify-content: space-between;
+}
+
+.button:hover {
+    background-color: #3b7cc2;
+}
