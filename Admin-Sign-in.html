@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Sign In</title>
+    <link rel="stylesheet" href="Admin-Sign-in.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="DCS Logo.jpg" alt="Logo" class="logo" />
+    </nav>
+    <div class="container-welcome-section">
+      <h2>WELCOME TO DCS LIBRARY</h2>
+      <h2>EXPLORE, DISCOVER & CONNECT</h2>
+    </div>
+    <div class="container-form-section">
+      <h2>ADMIN SIGN IN</h2>
+      <form action="/admin/dashboard" method="POST">
+        <p>Email or Username</p>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter Email or Username"
+          required
+        />
+        <p>Password</p>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          required
+        />
+        <div class="radio-section">
+          <input type="radio" id="remember" name="remember" />
+          <label for="remember" class="rem">Remember me</label>
+          <p><a href="#">Forgot Password?</a></p>
+        </div>
+        <button type="submit">Sign in</button>
+      </form>
+    </div>
+  </body>
+</html>
