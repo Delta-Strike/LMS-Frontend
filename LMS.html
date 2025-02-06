@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibConnect - Attendance Entry</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url('Iibrary.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 90%;
+            max-width: 950px;
+            background: #F6F3F3;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Form Group Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #F66606;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Unified Styles for Inputs and Selects */
+        select,
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        select option {
+            background: #FFFFFF;
+            color: #333;
+        }
+
+        input::placeholder {
+            color: #F66606;
+        }
+
+        select:focus,
+        input:focus {
+            outline: none;
+            border: 2px solid #F66606;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 10px rgba(246, 102, 6, 0.5);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Button Styles */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        .cooper-header {
+    text-align: center;
+    font-size: 2em;
+    color: #F66606;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+   
+    <div class="container">
+        <h1>LIBCONNECT</h1>
+        <form id="attendanceForm" onsubmit="return validateForm(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="level">Level</label>
+                    <select id="level" required>
+                        <option value="" disabled selected>Select your level</option>
+                        <option value="100">100 Level</option>
+                        <option value="200">200 Level</option>
+                        <option value="300">300 Level</option>
+                        <option value="400">400 Level</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" placeholder="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="" required>
+                </div>
+            </div>
+
+            <button type="submit">Submit Entry</button>
+        </form>
+        
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const studentId = document.getElementById('studentId').value;
+            const phone = document.getElementById('phone').value;
+
+            // Basic validation
+            if (phone.length < 10) {
+                alert('Please enter a valid phone number');
+                return false;
+            }
+
+            if (studentId.length < 5) {
+                alert('Please enter a valid student ID');
+                return false;
+            }
+
+            alert('Attendance recorded successfully!');
+            document.getElementById('attendanceForm').reset();
+            return false;
+        }
+    </script>
+</body>
+</html>
