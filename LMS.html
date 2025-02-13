@@ -29,8 +29,8 @@
         .container {
             width: 90%;
             max-width: 950px;
-            background: #F6F3F3;
-            backdrop-filter: blur(10px);
+            background: #80808080;
+            backdrop-filter: blur(1px);
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -53,10 +53,11 @@
 
         label {
             display: block;
-            color: #141087;;
+            color: #514ddf;;
             margin-bottom: 8px;
-            font-size: 1.1em;
+            font-size: 1.3em;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
         }
 
         /* Unified Styles for Inputs and Selects */
@@ -97,24 +98,29 @@
         }
 
         /* Button Styles */
-        button {
-            width: 100%;
+        button{
+            width: 30%;
             padding: 12px;
-            background: linear-gradient(45deg,#141087;, #141087;);
+            background-color: #514ddf;
             border: none;
             border-radius: 10px;
-            color: #141087;;
+            color:#ffffff;
             font-size: 1.1em;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 20px;
+            margin: 20px auto 0 310px;
         }
-       
+
+        a{
+            text-decoration: none;
+            color: #bbbbbb;
+        }
 
         button:hover {
             color: #141087;
+            background-color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
         }
         .cooper-header {
     text-align: center;
@@ -157,7 +163,7 @@
 <body>
    
     <div class="container">
-        <h1>LIBCONNECT</h1>
+        <h1>DCS Library</h1>
         <form id="attendanceForm" onsubmit="return validateForm(event)">
             <div class="form-row">
                 <div class="form-group">
@@ -187,7 +193,7 @@
                 </div>
             </div>
 
-            <button type="submit">LOG IN</button>
+            <button type="submit"><a href="Landing-Page.html">LOGIN</a></button>
         </form>
         
     </div>
